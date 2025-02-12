@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Recipes</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>Favorite Recipes</h1>
+    <ul class="grid-container">
+        {% for recipe in favorite_recipes %}
+        <li class="container">
+            <img src="{{ recipe.image_url }}" alt="{{ recipe.title }}">
+            <div class="container__text">
+                <h2>{{ recipe.title }}</h2>
+                <div class="container__text__star">
+                    <!-- Insert star ratings if available -->
+                </div>
+                <p>{{ recipe.description }}</p>
+                <div class="container__text__timing">
+                    <div class="container__text__timing_time">
+                        <h3>Prep Time</h3>
+                        <p>{{ recipe.prep_time }}</p>
+                    </div>
+                    <div class="container__text__timing_time">
+                        <h3>Total Time</h3>
+                        <p>{{ recipe.total_time }}</p>
+                    </div>
+                    <div class="container__text__timing_time">
+                        <h3>Servings</h3>
+                        <p>{{ recipe.servings }}</p>
+                    </div>
+                </div>
+                <a href="/favorites/{{ user_id }}/{{ recipe.id }}" class="btn">View Recipe <i class="fa fa-arrow-right"></i></a> <!-- Link updated to include user ID -->
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

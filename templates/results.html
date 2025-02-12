@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+{% for i in results %}
+<div class="container">
+        <div class="row">
+                <div class="col">
+                        <div class="card" style="width: 18rem;">
+                                <img class="card-img-top" src="{{url_for('static',filename=i.image)}}" alt="Card image cap">
+                                <div class="card-body">
+                                        <h4 href="/single_recipie/{{i.id}}" class="card-title">{{ i.title}}</h4>
+                                        <a href="/single_recipie/{{i.id}}" class="btn btn-primary">Read recipie</a>
+                                </div>
+                        </div>           
+                </div>
+        </div>
+</div>
+
+
+{% else %}      
+        <center>
+                <div class="container">
+                        <h1 style="color:white;"> <strong> Recipie Not Found!! </strong></h1>
+                </div>
+        </center>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="stylesheet" href="static/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        strong {
+            font-weight: bold;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .time {
+            font-style: italic;
+        }
+        .details {
+            margin-top: 20px;
+        }
+        .details p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ recipe.title }}</h1>
+        <p><strong>Ingredients:</strong> {{ recipe.ingredients }}</p>
+        <p><strong>Instructions:</strong> {{ recipe.instructions }}</p>
+        <div class="details">
+            <p><strong>Author:</strong> {{ recipe.author }}</p>
+            <p><strong>Category:</strong> {{ recipe.category }}</p>
+            <p><strong>Prep Time:</strong> <span class="time">{{ recipe.prep_time }} mins</span></p>
+            <p><strong>Cook Time:</strong> <span class="time">{{ recipe.cook_time }} mins</span></p>
+            <p><strong>Total Time:</strong> <span class="time">{{ recipe.total_time }} mins</span></p>
+            <p><strong>Servings:</strong> {{ recipe.servings }}</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Sharing Platform</title>
+    <style>
+        body {
+            background-image: url('\\static\\background.jpg');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .top-links {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .top-links a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 18px;
+        }
+        .search-container {
+            width: 50%;
+            max-width: 400px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .search-container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .search-container input[type="submit"] {
+            background-color: white;
+            color: #333;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-links">
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+        <a href="/favorites/{{ user_id }}">Favorite Recipes</a> <!-- Update the link to include the user ID -->
+    </div>
+    <div class="search-container">
+        <form action="/search" method="get">
+            <input type="text" name="search_query" placeholder="Search for recipes...">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</body>
+</html>
